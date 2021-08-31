@@ -1,0 +1,55 @@
+<html ng-app="listaTelefonica">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self';" /> -->
+
+    <!-- Chamada do bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="/style/app.css">
+	<link rel="stylesheet" href="/style/alert.css">
+	<link rel="stylesheet" href="/style/accordion.css">
+
+    <!-- Chamada do AngularJs -->
+    <script src="/_libs/_angular/angular.js"></script>
+	<script src="_libs/_angular/angular-messages.js"></script>
+	<script src="_libs/_angular/angular-route.js"></script>
+	<script src="_libs/serialGenerator/serialGeneratorService.js"></script>
+	<script src="_libs/uiAccordion/uiAccordionDirective.js"></script>
+
+	<script src="/js/app.js"></script>
+	<script src="js/controllers/listaTelefonicaCtrl.js"></script>
+	<script src="js/controllers/novoContatoCtrl.js"></script>
+
+	<script src="js/services/contatosAPIService.js"></script>
+	<script src="js/services/operadorasAPIService.js"></script>
+	
+	<script src="js/filters/nameFilter.js"></script>
+	<script src="js/filters/ellipsisFilter.js"></script>
+
+	<script src="js/directives/uiAlertDirective.js"></script>
+	<script src="js/directives/uiDateDirective.js"></script>
+
+	<script src="js/interceptors/timestampInterceptor.js"></script>
+	<script src="js/interceptors/errorInterceptor.js"></script>
+	<script src="js/interceptors/loadingInterceptor.js"></script>
+
+	<script src="js/utils/routeConfig.js"></script>
+	<script src="js/utils/configValue.js"></script>
+	<script src="js/utils/interceptorsConfig.js"></script>
+
+	<title>Lista Telefônica</title>
+	
+</head>
+<body>
+	
+	<div class='jumbotron' ng-show='loading'>
+		<h5>Carregando, por favor aguarde...</h5>
+	</div>
+
+	<div ng-hide='loading'>
+		<div ng-view></div>
+		<div ng-include="'view/footer.html'"></div>
+	</div>
+</body>
+</html>
